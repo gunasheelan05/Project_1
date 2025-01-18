@@ -1,0 +1,6 @@
+<div class="h-[100vh] w-[100vw] relative bg-black flex justify-center items-center">
+  <div class="absolute h-[40%] w-[40%] bg-slate-400 rounded-lg">
+     <input type="text" (keydown)="handleChangeOfInput($event)" placeholder="Please Enter Something Here...." class="border border-green-400 w-[40%]" >
+     <p [innerText]="inputValue()"></p>
+  </div>
+</div>
