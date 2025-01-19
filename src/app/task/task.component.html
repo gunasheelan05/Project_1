@@ -1,1 +1,5 @@
-<p>{{userName()}}</p>
+@if (userName().length > 0) {
+  <p *ngIf="userName().length > 0">{{userName()}}</p>
+} @else {
+    <p *ngIf="userName().length <= 0">Select The User To See The Task</p>
+}
