@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-task',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss',
   standalone: true
