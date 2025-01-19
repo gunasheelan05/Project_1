@@ -1,5 +1,12 @@
 <app-header />
-<section *ngFor="let item of userDatas" class="mt-3" >
-    <app-user [profileName]="item.name" [profilePicture]="item.avatar" />
-</section>
+<div class="flex">
+    <div class="w-[40%]">
+        <section *ngFor="let item of userDatas" class="mt-3" >
+            <app-user [profileName]="item.name" [profilePicture]="item.avatar" [userId]="item.id" (selectedUser)="getSelectedUserId($event)" />
+        </section>
+    </div>
+    <section class="w-[50%] h-[50%] mt-2">
+        <app-task [userName]="selectedUserName" />
+    </section>
+</div>
 <router-outlet />
