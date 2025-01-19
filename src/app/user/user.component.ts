@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,14 +7,19 @@ import { DUMMY_USERS } from '../dummy-users';
   standalone: true
 })
 export class UserComponent {
-  public getSelectedUser: number = Math.floor(Math.random() * DUMMY_USERS.length);
-  public userProfilePicture: string;
-
-  constructor() {
-    this.userProfilePicture = `assets/png/${DUMMY_USERS[this.getSelectedUser].avatar}`;
-  };
+  // public getSelectedUser: number = Math.floor(Math.random() * DUMMY_USERS.length);
+  // public userProfilePicture: string;
+  // Zone.js Approach
+  // @Input({ required: true }) profilePicture!: string;
+  // @Input({ required: true }) profileName!: string;
   
+  // Signal Approach 
+  profilePicture = input.required();
+  profileName = input.required();
+
+  constructor() {};
+
   get getImageWithPath() {
-    return `${DUMMY_USERS[this.getSelectedUser].name}`;
+    return `assets/png/${this.profilePicture()}`;
   }
 };

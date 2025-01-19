@@ -1,9 +1,9 @@
-<main class="h-20">
-    <div class="relative mt-7">
-        <section class="absolute left-[12.5%] w-[28%] h-20 bg-sky-800 rounded-md">
+<main class="h-[3.8rem]">
+    <div class="relative">
+        <section class="absolute left-[12.5%] w-[22%] h-14 bg-sky-800 rounded-md cursor-pointer hover:bg-sky-900 hover:shadow-2xl shadow-red-800">
             <div class="flex items-center gap-5 h-full absolute left-3">
-                <img [src]="userProfilePicture" class="profile-image-user" alt="NoteBook" width="90px">
-                <p class="font-sans font-semibold text-white">{{getImageWithPath}}</p>
+                <img [src]="getImageWithPath" class="profile-image-user" alt="NoteBook" width="90px">
+                <p class="font-sans font-semibold text-white">{{profileName()}}</p>
             </div>
         </section>
     </div>

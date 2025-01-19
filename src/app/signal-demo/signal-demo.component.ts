@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignalDemoComponent {
   inputValue = signal('');
+  public imgName: string = 'NoteBook.png';
+  // For Computed Value Like img path + variable Name; we can user the compute
+  imgUrl = computed(() => { 
+    return `assets/png/${this.imgName}`
+   });
   constructor() {};
 
   handleChangeOfInput(event: Event): void {
